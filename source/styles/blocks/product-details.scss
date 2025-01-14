@@ -1,7 +1,118 @@
+.product-details {
+  padding-bottom: 49px;
+
+  @media (min-width: $tablet-width) {
+    padding-bottom: 104px;
+    border-bottom: 1px solid #e6e6e6;
+  }
+
+  @media (min-width: $desktop-width) {
+    border: none;
+    padding-bottom: 127px;
+  }
+}
+
 .product-details__title {
   font-family: $secondary-font;
   font-size: 36px;
   line-height: 40px;
   font-weight: 400;
   color: $basic-title-color;
+  margin: 0;
+  margin-bottom: 40px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 60px;
+    line-height: 1;
+    margin-bottom: 72px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 71px;
+  }
+}
+
+.product-details__list {
+  @include clear-list;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 133px 58px;
+    counter-reset: list-number 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    padding-right: 0;
+    column-gap: 76px;
+  }
+}
+
+.product-details__item {
+  @media (min-width: $tablet-width) {
+    position: relative;
+    counter-increment: list-number 1;
+
+    &::after {
+      content: counter(list-number);
+      font-family: $secondary-font;
+      font-size: 280px;
+      line-height: 1;
+      color: $secondary-bg-color;
+      position: absolute;
+      top: -40px;
+      right: 0;
+      z-index: -1;
+    }
+  }
+
+  &--benefit {
+    @media (min-width: $tablet-width) {
+      width: 230px;
+    }
+  }
+
+  &--easy {
+    @media (min-width: $tablet-width) {
+      width: 246px;
+    }
+  }
+
+  &--instruction {
+    @media (min-width: $tablet-width) {
+      width: 238px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 248px;
+      padding-left: 3px;
+    }
+  }
+
+  &--effect {
+    @media (min-width: $tablet-width) {
+      width: 249px;
+    }
+
+    @media (min-width: $desktop-width) {
+      width: 250px;
+      padding-left: 3px;
+    }
+  }
+}
+
+.product-details__item--benefit::after {
+  @media (min-width: $tablet-width) {
+    right: 5px;
+  }
+}
+
+.product-details__item--instruction::after {
+  @media (min-width: $tablet-width) {
+    right: -5px;
+  }
 }

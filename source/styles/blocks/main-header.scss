@@ -1,0 +1,126 @@
+.main-header {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 83px;
+  }
+}
+
+.main-header--catalog {
+  &::before {
+    display: none;
+  }
+}
+
+.main-header__hero {
+  margin-bottom: 20px;
+  position: relative;
+
+  &::before {
+    content: "";
+    background-image: url("../../images/background-index-mobile@1x.jpg");
+    background-size: auto 302px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #64a73c;
+    width: 100%;
+    min-height: 302px;
+    height: 47%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include retina {
+      background-image: url("../../images/background-index-mobile@2x.jpg");
+    }
+
+    @media (min-width: $tablet-width) {
+      display: none;
+    }
+
+    @media (min-width: $desktop-width) {
+      display: block;
+      background-image: url("../../images/background-index-desktop@1x.jpg");
+      background-position: right top;
+      background-size: auto 100%;
+      width: 50%;
+      min-height: 694px;
+      height: 100%;
+      left: 50%;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+    position: static;
+  }
+}
+
+.main-header__logo-container {
+  display: flex;
+  width: 100%;
+  padding: 13px 20px 10px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
+
+  &:hover .main-header__logo,
+  &:focus .main-header__logo {
+    opacity: 80%;
+  }
+
+  &:active .main-header__logo {
+    opacity: 60%;
+  }
+}
+
+.main-header__container {
+  padding: 0;
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 34px 0 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 55px 110px 0;
+  }
+}
+
+.main-header__logo {
+  margin-right: -33px;
+
+  @media (min-width: $tablet-width) {
+    margin-right: 0;
+  }
+}
+
+.main-header__logo--text {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 0;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 13px;
+    margin-right: 0;
+    padding: 16px 0;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 19px 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .main-header__hero::before {
+    @include retina {
+      background-image: url("../../images/background-index-desktop@2x.jpg");
+    }
+  }
+}

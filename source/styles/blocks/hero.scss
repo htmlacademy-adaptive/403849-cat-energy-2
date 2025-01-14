@@ -1,9 +1,39 @@
+.hero__img {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 3px;
+
+  @media (min-width: $tablet-width) {
+    position: absolute;
+    bottom: -23px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+  }
+
+  @media (min-width: $desktop-width) {
+    transform: none;
+    left: 557px;
+    top: 24px;
+  }
+}
+
 .hero__title {
   font-family: $secondary-font;
   font-weight: 400;
   font-size: 36px;
-  line-height: 36px;
+  line-height: 1;
   color: #ffffff;
+  margin: 0;
+  margin-bottom: 25px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    color: $basic-title-color;
+    font-size: 60px;
+    text-align: left;
+    margin-bottom: 40px;
+  }
 }
 
 .hero__slogan {
@@ -11,8 +41,65 @@
   line-height: 14px;
   color: #ffffff;
   text-transform: uppercase;
+  display: block;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: $tablet-width) {
+    color: $basic-title-color;
+    font-size: 20px;
+    line-height: 1;
+    text-align: left;
+  }
+}
+
+.hero__container {
+  @media (min-width: $tablet-width) {
+    flex-direction: column;
+    position: relative;
+    padding-bottom: 505px;
+    padding-left: 120px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 191px;
+    padding-bottom: 184px;
+    padding-top: 50px;
+  }
+}
+
+.hero__button {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  @media (min-width: $tablet-width) {
+    font-size: 20px;
+    line-height: 26px;
+    width: 242px;
+    position: relative;
+    z-index: 2;
+    padding-top: 14px;
+    padding-bottom: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 244px;
+  }
 }
 
 .hero__slogan-container {
-  background-color: $basic-bg-color;
+  padding-top: 27px;
+  margin-bottom: 30px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 62px;
+    margin-bottom: 50px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 57px;
+    margin-bottom: 51px;
+    width: 40%;
+  }
 }
